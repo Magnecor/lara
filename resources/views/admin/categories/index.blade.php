@@ -7,6 +7,7 @@
       @slot('title') Список категорий @endslot
       @slot('parent') Главная @endslot
       @slot('active') Категории @endslot
+      @slot('welcome') В корень @endslot
     @endcomponent
      <hr>
      <a href="{{route('admin.category.index')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Создать категорию</a>
@@ -31,6 +32,18 @@
           </tr>
         @endforelse
       </tbody>
+<tfoot>
+<tr>
+  <td colspan="3">
+    <ul class="pagination pull-right">
+      {{$categories->links()}}
+    </ul>
+  </td>
+</tr>
+
+  </tfoot>
+
+
     </table>
   </div>
 
