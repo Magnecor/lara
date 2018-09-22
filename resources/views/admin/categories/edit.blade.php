@@ -4,7 +4,7 @@
 
   <div class="container">
      @component('admin.components.breadcrumb')
-      @slot('title') Создание категорий @endslot
+      @slot('title') Редактирование категорий @endslot
       @slot('parent') Главная @endslot
       @slot('active') Категории @endslot
 
@@ -12,7 +12,8 @@
 
     <hr>
 
-<form class="form-horizontal" action="{{route('admin.category.store')}}" method="post">
+<form class="form-horizontal" action="{{route('admin.category.update', $category)}}" method="post">
+  <input type="hidden" name="_method" value="put">
 {{csrf_field()}}
 
 

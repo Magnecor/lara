@@ -15,16 +15,27 @@
       <thead>
         <th>Наименование</th>
         <th>Публикация</th>
+          <th>Дата создания</th>
         <th class="text-right">Действие</th>
       </thead>
       <tbody>
+
+
         @forelse ($categories as $category)
           <tr>
             <td>{{$category->title}}</td>
-            <td>{{$category->published}}</td>
-            <td>
-              <a href="{{route('admin.category.edit', ['id'=>$category->id])}}"><i class="fa fa-edit"></i></a>
-            </td>
+            <td>@if ($category->published == 1) {{ 'Опубликовано' }}
+            @else {{ 'Не опубликовано' }}
+            @endif</td>
+            <td class="text-right">
+            <form  onsubmit="if(confirm('Удалить?')) {return true} else {return false}" class="" action="{{route('admin.category.destroy', $category)}}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              {{csrf_field()}}
+                <a href="{{route('admin.category.edit', $category)}}" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                <button type="submit" class="btn" name="button"><i class="fa fa-trash-o"></i></button>
+            </form>
+              <td>{{$category->created_at}}</td>
+
           </tr>
         @empty
           <tr>

@@ -20,6 +20,9 @@ Route::resource('/category', 'CategoryController', ['as'=>'admin']);
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/help', function () {
+    return view('help');
+});
 
 Auth::routes();
 
