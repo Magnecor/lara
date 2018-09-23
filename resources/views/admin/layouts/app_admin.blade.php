@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Styles -->
+    <script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -38,7 +39,7 @@
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
 <ul class="dropdown-menu" role="menu">
 <li><a href="{{route('admin.category.index')}}" class="nav-link dropdown" >Категории</a> </li>
-<li><a href="#" class="nav-link dropdown" >Материалы</a> </li>
+<li><a href="{{route('admin.article.index')}}" class="nav-link dropdown" >Новости</a> </li>
 <li><a href="#" class="nav-link dropdown" >Заказы</a> </li>
 <li><a href="#" class="nav-link dropdown" >Архив</a> </li>
 </ul>
